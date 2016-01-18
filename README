@@ -1,48 +1,47 @@
 ------------------------------------------------------------------------------------------------------
 Description:
-1. The mesh demo is used to connect multiple IOT nodes to Local server.
-2. Every node sends one packet to server per 5 seconds after it joins mesh network
-3. When local server receive one packet from node ,it justes echo the packet back to node.
-4. When node receive packet from server, it print the content of packet.
-5. mesh demo provide recommendation to setup general protocol parser
+1. The mesh_demo is used to connect multiple IOT nodes to local server.
+2. Every node sends one packet to server per 5 seconds after it joins mesh network.
+3. When local server receives one packet from node ,it just echoes the packet back to the node.
+4. When node receives packet from server, it prints the content of the packet.
+5. Mesh_demo provides recommendation for general protocol parser setup.
 ------------------------------------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------------------------------------
-Please follow steps to run mesh_demo:
-1. Setup mesh demo server according to the demo_server.py.
-2. After setup mesh demo server, please update server_ip and server_port in user_config.h according to
-   your demo server.
+Please follow below steps to run mesh_demo:
+1. Set up mesh_demo server according to demo_server.py.
+2. After mesh_demo server setup, please update server_ip in user_config.h according to your demo server.
 3. Build run image using gen_misc.sh.
 4. Download run image to device, then start mesh demo.
 ------------------------------------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------------------------------------
-How to setup local server:
-1. Prepare one computer, and please make sure python script can run on the computer
-2. run demo_server.py on the computer
+How to set up local server:
+1. Prepare one computer and make sure python script can run on the computer.
+2. Run demo_server.py on the computer
 ------------------------------------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------------------------------------
 How to build run image:
-1. export SDK_BASE=/directory_of_your_mesh_demo_project in gen_misc.sh
-2. get ip address of local server.
-3. change server_ip in user_config.h to ip address of local server
-4. run ./gen_misc.h
+1. Export SDK_BASE=/directory_of_your_mesh_demo_project in gen_misc.sh.
+2. Obtain IP address of local server.
+3. Change server_ip in user_config.h according to the IP address of local server.
+4. Run ./gen_misc.h
    boot version: boot_v1.2+
    bin generate: user1.bin
    spi speed: 40MHz
    spi mode: QIO
-   spi size and map: 1024( 512KB+ 512KB)
+   spi size and map: 1024 (512KB + 512KB)
 ------------------------------------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------------------------------------
 Download image to device:
-1. get download tools from official webset of ESPRESSIF
-2. download the following four file in ./bin/ to device:
+1. Get download tools from the official website of Esressif at http://espressif.com.
+2. Download the following four files in ./bin/ to device:
 ------------------------------------------------------------------------------------------------------
           file                     download_address
 ---------------------------------------------------------------
@@ -51,6 +50,5 @@ blank.bin                             0xfe000
 boot_v1.4(b1).bin                     0x00000
 upgrade/user1.1024.new1.bin           0x01000
 ---------------------------------------------------------------
-NOTE: before you start to download, please make sure you select
-      right flash size(FLASH SIZE is 8Mbit)
-------------------------------------------------------------------------------------------------------
+NOTE: Before starting to download, please make sure you have selected the right flash size (8 Mbit).
+
